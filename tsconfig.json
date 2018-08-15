@@ -16,6 +16,14 @@
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@kravets-nataliia/testMod": [
+        "dist/kravets-nataliia/test-mod"
+      ],
+      "@kravets-nataliia/testMod/*": [
+        "dist/kravets-nataliia/test-mod/*"
+      ]
+    }
   }
 }

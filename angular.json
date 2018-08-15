@@ -121,6 +121,46 @@
           }
         }
       }
+    },
+    "@kravets-nataliia/testMod": {
+      "root": "projects/kravets-nataliia/test-mod",
+      "sourceRoot": "projects/kravets-nataliia/test-mod/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/kravets-nataliia/test-mod/tsconfig.lib.json",
+            "project": "projects/kravets-nataliia/test-mod/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/kravets-nataliia/test-mod/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/kravets-nataliia/test-mod/src/test.ts",
+            "tsConfig": "projects/kravets-nataliia/test-mod/tsconfig.spec.json",
+            "karmaConfig": "projects/kravets-nataliia/test-mod/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/kravets-nataliia/test-mod/tsconfig.lib.json",
+              "projects/kravets-nataliia/test-mod/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "npmModule"
